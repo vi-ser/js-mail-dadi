@@ -25,7 +25,7 @@ const searchButtonElement = document.querySelector("#search-button");
 
 
 // variabile di controllo
-let check = 0;
+let check = false;
 
 // controllo quando effettuo un click
 searchButtonElement.addEventListener("click",
@@ -34,13 +34,13 @@ searchButtonElement.addEventListener("click",
         console.log(userEmail);
 
         for (let i = 0; i < emails.length; i++) {
-            if (emails[i] == userEmail) {
-                check = 1;
+            if (emails[i] === userEmail) {
+                check = true;
             }
         }
 
-        if (check == 0) {
-            console.log("L'email non è presente nel database");
+        if (check) {
+            console.log("L'email è presente nel database");
         }
 
         else {
