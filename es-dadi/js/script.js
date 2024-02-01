@@ -8,27 +8,48 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 const dieSides = ["1", "2", "3", "4", "5", "6"];
 console.log(dieSides);
 
-// genero un numero casuale
-let randomNumber = Math.random();
+// salvo gli elementi del DOM
+const playerDiceElement = document.querySelector("#player-dice");
+const cpuDiceElement = document.querySelector("#cpu-dice");
+const gameResultElement = document.querySelector("#game-result");
 
-// creo un indice casuale tra gli elementi dell'array
-let randomIndex = Math.floor(dieSides.length * randomNumber);
+// salvo il pulsante 
+const playButtonElement = document.querySelector("#play-button");
 
-// scelgo l'elemento dell'array con indice generato casualmente
-let playerScore = dieSides[randomIndex];
+// inizio del gioco al click
+playButtonElement.addEventListener("click",
+    function () {
+        // genero un numero casuale
+        let randomNumber = Math.random();
 
-//stampa punteggio giocatore
-console.log("Ti è uscito", playerScore);
+        // creo un indice casuale tra gli elementi dell'array
+        let randomIndex = Math.floor(dieSides.length * randomNumber);
 
-// ripeto le operazioni per il computer
-randomNumber = Math.random();
-randomIndex = Math.floor(dieSides.length * randomNumber);
-cpuScore = dieSides[randomIndex];
+        // scelgo l'elemento dell'array con indice generato casualmente
+        let playerScore = dieSides[randomIndex];
 
-// stampa punteggio computer
-console.log("Al computer è uscito", cpuScore);
+        //stampa punteggio giocatore
+        playerDiceElement.innerHTML = `Ti è uscito ${playerScore}`;
 
+        // ripeto le operazioni per il computer
+        randomNumber = Math.random();
+        randomIndex = Math.floor(dieSides.length * randomNumber);
+        cpuScore = dieSides[randomIndex];
 
+        //stampa punteggio giocatore
+        cpuDiceElement.innerHTML = `Al computer è uscito ${cpuScore}`;
 
+        // decreto il vincitore
+        if (playerScore > cpuScore) {
+            gameResultElement.innerText = "Hai vinto!";
+        }
 
+        else if (playerScore < cpuScore) {
+            gameResultElement.innerText = "Hai perso!";
+        }
 
+        else {
+            gameResultElement.innerText = "Pareggio!";
+        }
+    }
+)
