@@ -6,21 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esercizio dadi</title>
 
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
-<body>
+<body class="bg-success">
 
-    <h1>Dice Game</h1>
+    <div class="container p-5">
 
-    <input id="play-button" type="button" value="Lancia il dado!">
+        <div class="row">
+            <div class="col-10 col-md-4 m-auto d-flex flex-column justify-content-center align-items-center">
+                <h1 class="text-white text-center">Dice Game</h1>
 
-    <p id="player-dice"></p>
+                <input id="play-button" class="btn btn-light mt-2" type="button" value="Lancia il dado!">
+            </div>
+        </div>
 
-    <p id="cpu-dice"></p> <br>
+
+        <div class="row d-flex justify-center bg-white rounded-2 mt-5 p-5">
+            <div class="col-10 col-md-4 m-auto d-flex justify-content-between">
+
+                <div>
+                    <strong>Tu</strong>
+                    <p id="player-dice"></p>
+                </div>
+
+                <div>
+                    <strong>CPU</strong>
+                    <p id="cpu-dice"></p>
+                </div>
+            </div>
 
 
-    <strong id="game-result"></strong>
+            <strong id="game-result" class="mt-5 text-center"></strong>
 
+        </div>
+
+    </div>
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <script src="./js/script.js"></script>
 </body>
