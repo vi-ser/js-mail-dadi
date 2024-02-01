@@ -22,6 +22,8 @@ const emails = ["mario.rossi@gmail.com",
 // salvo gli elementi del DOM
 const emailAddressElement = document.querySelector("#email-address");
 const searchButtonElement = document.querySelector("#search-button");
+const searchResultElement = document.querySelector("#search-result");
+
 
 
 // variabile di controllo
@@ -30,21 +32,27 @@ let check = false;
 // controllo quando effettuo un click
 searchButtonElement.addEventListener("click",
     function () {
+
+        // assegno alla variabile il valore inserito dall'utente
         const userEmail = emailAddressElement.value;
         console.log(userEmail);
 
+
         for (let i = 0; i < emails.length; i++) {
             if (emails[i] === userEmail) {
+                // email trovata
                 check = true;
             }
         }
 
         if (check) {
             console.log("L'email è presente nel database");
+            searchResultElement.innerText = "L'email è presente nel database!";
         }
 
         else {
             console.log("L'email non è presente nel database");
+            searchResultElement.innerText = "L'email non è presente nel database!";
         }
 
     }
