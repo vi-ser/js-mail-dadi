@@ -27,7 +27,6 @@ const searchResultElement = document.querySelector("#search-result");
 
 
 // variabile di controllo
-let check = false;
 
 // controllo quando effettuo un click
 searchButtonElement.addEventListener("click",
@@ -36,6 +35,8 @@ searchButtonElement.addEventListener("click",
         // assegno alla variabile il valore inserito dall'utente
         const userEmail = emailAddressElement.value;
         console.log(userEmail);
+
+        let check = false;
 
 
         for (let i = 0; i < emails.length; i++) {
